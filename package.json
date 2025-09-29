@@ -1,0 +1,52 @@
+{
+  "name": "gulf-return-detector",
+  "displayName": "React Return Visualizer",
+  "description": "Professional visual enhancement for React return statements - Beautiful, intelligent highlighting that shows what each return renders",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:typescript",
+    "onLanguage:typescriptreact",
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact"
+  ],
+  "main": "./out/simple-extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "gulf-return-detector.toggle",
+        "title": "Toggle React Return Visualization",
+        "category": "Gulf"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "gulf-return-detector.toggle",
+          "when": "resourceExtname =~ /\\.(tsx|jsx)$/"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/babel__traverse": "^7.28.0",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.74.0",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.23.0",
+    "@babel/traverse": "^7.23.0",
+    "@babel/types": "^7.23.0"
+  }
+}
